@@ -6,12 +6,6 @@ npm install
 npm run build
 
 
-If you use bun (you have bun.lockb):
-
-bun install
-bun run build
-
-
 Confirm you now have a folder:
 
 dist/ (most likely)
