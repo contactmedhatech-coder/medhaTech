@@ -6,7 +6,7 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
+  { name: 'Home11111', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
   { name: 'Blog', href: '#blogs' },
