@@ -7,8 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
-dist
+
+# IMPORTANT:
+# We DO NOT ignore dist because cPanel does not build the project.
+# dist must be committed and pushed for deployment to work.
+# dist
+
 dist-ssr
 *.local
 
@@ -23,10 +29,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# build artifacts
+# Build artifacts (zip only)
 dist.zip
-
-
-# build artifacts
-dist.zip
-
