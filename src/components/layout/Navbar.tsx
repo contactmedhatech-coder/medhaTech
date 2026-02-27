@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -18,6 +18,25 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handle keyboard shortcut for admin access - press 'a' key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Press 'a' key to go to admin login (only when not typing in input)
+      if (e.key === 'a' || e.key === 'A') {
+        if (
+          document.activeElement?.tagName !== 'INPUT' &&
+          document.activeElement?.tagName !== 'TEXTAREA'
+        ) {
+          navigate('/admin/login');
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [navigate]);
 
   useEffect(() => {
     const handleScroll = () => {

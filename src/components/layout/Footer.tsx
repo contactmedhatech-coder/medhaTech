@@ -14,7 +14,6 @@ import {
   CheckCircle2,
   XCircle,
 } from 'lucide-react';
-import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 
@@ -47,7 +46,6 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
-  const { isAuthenticated } = useAuth();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -190,14 +188,6 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-            {!isAuthenticated && (
-              <Link
-                to="/admin/login"
-                className="text-off-white hover:text-ice-blue transition-colors text-sm block mt-3"
-              >
-                Admin Login
-              </Link>
-            )}
           </div>
 
           <div>
