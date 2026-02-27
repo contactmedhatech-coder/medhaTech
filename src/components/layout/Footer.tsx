@@ -166,7 +166,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-sm text-off-white">
                 <Mail className="w-4 h-4 text-off-white" />
-                hello@medhatech.com
+                contact.medhatech@gmail.com
               </div>
             </div>
           </div>

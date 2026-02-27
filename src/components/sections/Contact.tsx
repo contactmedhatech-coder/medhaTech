@@ -82,7 +82,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'hello@medhatech.com',
+    content: 'contact.medhatech@gmail.com',
     subContent: 'We reply within 24 hours',
   },
 ];
@@ -215,7 +215,7 @@ export const Contact = () => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_email: 'pasangworkspace@gmail.com',
+        to_email: 'contact.medhatech@gmail.com',
       };
 
       await emailjs.send(
@@ -352,7 +352,7 @@ export const Contact = () => {
                       <Input
                         type="email"
                         name="email"
-                        placeholder="hello@medhatech.com"
+                        placeholder="contact.medhatech@gmail.com"
                         value={formData.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
