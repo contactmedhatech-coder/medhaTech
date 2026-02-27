@@ -6,4 +6,4 @@ deployment:
     - /bin/rm -rf ${DEPLOYPATH}assets
     - /bin/rm -f ${DEPLOYPATH}index.html
 
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - /bin/cp -R ./dist/* $DEPLOYPATH
