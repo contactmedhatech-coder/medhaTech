@@ -3,12 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/medhatec/public_html/
 
-    # Remove old build files only (don't wipe the whole public_html)
-    - /bin/rm -rf $DEPLOYPATH/assets
-    - /bin/rm -f $DEPLOYPATH/index.html
-    - /bin/rm -f $DEPLOYPATH/robots.txt
-    - /bin/rm -f $DEPLOYPATH/favicon.ico
-    - /bin/rm -f $DEPLOYPATH/favicon.svg
+    - /bin/rm -rf ${DEPLOYPATH}assets
+    - /bin/rm -f ${DEPLOYPATH}index.html
 
-    # Copy the new build output
     - /bin/cp -R dist/* $DEPLOYPATH
