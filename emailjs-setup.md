@@ -12,7 +12,7 @@ To make the contact form work, you need to set up EmailJS and add your credentia
 1. In the EmailJS dashboard, click **Email Services** in the left sidebar
 2. Click **Add New Service**
 3. Choose a provider (Gmail is recommended)
-4. Connect your Gmail account
+4. Connect your Gmail account (contact.medhatech@gmail.com)
 5. Copy the **Service ID** (e.g., `service_xxxxxxx`)
 
 ## Step 3: Create an Email Template
@@ -25,11 +25,12 @@ To make the contact form work, you need to set up EmailJS and add your credentia
    - `{{from_email}}` - Sender's email
    - `{{subject}}` - Message subject
    - `{{message}}` - Message content
-   - `{{to_email}}` - Recipient email (pasangworkspace@gmail.com)
+   - `{{to_email}}` - Recipient email (contact.medhatech@gmail.com)
 
-5. In the "To Email" field of the template, use: `pasangworkspace@gmail.com`
-6. Save the template
-7. Copy the **Template ID** (e.g., `template_xxxxxxx`)
+5. In the "To Email" field of the template, use: `{{to_email}}` (this allows dynamic recipient from the form)
+6. Set a default recipient in the template settings: `contact.medhatech@gmail.com`
+7. Save the template
+8. Copy the **Template ID** (e.g., `template_xxxxxxx`)
 
 ## Step 4: Get Your Public Key
 
@@ -64,3 +65,4 @@ npm run dev
 - **"Failed to send message"**: Check that all environment variables are correctly set
 - **CORS errors**: Make sure your domain is authorized in EmailJS settings
 - **Template variables not working**: Ensure the variable names in your template match exactly (case-sensitive)
+- **Email not going to correct address**: Make sure the template uses `{{to_email}}` variable in the To field or has `contact.medhatech@gmail.com` set as default recipient
